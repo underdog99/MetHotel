@@ -1,0 +1,40 @@
+<div>
+    <div>
+        <h2>Pretraga</h2>
+        <input placeholder="Trazi...">
+    </div>
+</div>
+<hr>
+<form>
+  <h3>Dodaj novu sobu</h3>
+  <div>
+      <div>
+          <label for="naziv">Naziv:</label>
+          <input name="naziv" id="naziv" #newnaziv required>
+      </div>
+      <div>
+          <label for="tip">Tip:</label>
+          <input name="tip" id="tip" #newtip required>
+      </div>
+      <div>
+          <label for="sprat">Sprat:</label>
+          <input name="sprat" id="sprat" #newsprat required>
+      </div>
+      <div>
+          <label for="opis">Opis:</label>
+          <input name="opis" id="opis" #newopis required>
+      </div>
+      <div>
+          <label for="cena">Cena:</label>
+          <input name="cena" id="cena" #newcena required>
+      </div>
+      <div>
+          <button (click)="addSobu(newnaziv, newtip, newsprat, newopis, newcena)">
+              Dodaj
+          </button>
+      </div>
+  </div>
+</form>
+<hr>
+<app-sobe *ngFor="let s of sobeNiz" [soba]="s">
+</app-sobe>
