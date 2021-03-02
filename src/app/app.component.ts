@@ -40,4 +40,15 @@ export class AppComponent {
     this.sobeNiz.push(new Sobe(naziv.value, tip.value, sprat.valueAsNumber, opis.value, cena.valueAsNumber));
     return false;
   }
+
+  public obrisiSobu(soba: Sobe){
+    this.sobeNiz = this.sobeNiz.filter(item => {
+      return item.naziv !== soba.naziv
+    });
+  }
+
+  public updateSobu(soba: Sobe){
+    let id = this.sobeNiz.findIndex(i => i.naziv === soba.naziv);
+    this.sobeNiz[id].naziv = "Azurirano";
+  }
 }

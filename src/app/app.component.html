@@ -36,5 +36,9 @@
   </div>
 </form>
 <hr>
-<app-sobe *ngFor="let s of sobeNiz" [soba]="s">
-</app-sobe>
+<app-sobe *ngFor="let s of sobeNiz" [soba]="s"
+(sobaBrisanje)="obrisiSobu($event)"
+(sobaUpdate)="updateSobu($event)"
+[soba]="s">
+</app-sobe>>
+
