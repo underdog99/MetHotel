@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RoomServiceService } from './services/room-service.service';
 import { Sobe } from './sobe/sobe.model';
 
 @Component({
@@ -33,6 +34,8 @@ export class AppComponent {
         3000
       )
     ];
+
+    roomService: RoomServiceService
   }
 
   addSobu(naziv: HTMLInputElement, tip: HTMLInputElement, sprat: HTMLInputElement, opis: HTMLInputElement, cena: HTMLInputElement): boolean{

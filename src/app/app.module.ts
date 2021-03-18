@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SobeComponent } from './sobe/sobe.component';
 import { PretragaPipe } from './pipe/pretraga.pipe';
+import { RoomServiceService } from './services/room-service.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,9 @@ import { PretragaPipe } from './pipe/pretraga.pipe';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    RoomServiceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
