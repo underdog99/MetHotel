@@ -10,7 +10,7 @@ import { Sobe } from './sobe/sobe.model';
 export class AppComponent {
   sobeNiz: Sobe[];
 
-  constructor(){
+  constructor(private _roomService: RoomServiceService){
     this.sobeNiz = [
       new Sobe(
         'Soba 1',
@@ -35,7 +35,7 @@ export class AppComponent {
       )
     ];
 
-    roomService: RoomServiceService
+    this._roomService.getRoom().subscribe();
   }
 
   addSobu(naziv: HTMLInputElement, tip: HTMLInputElement, sprat: HTMLInputElement, opis: HTMLInputElement, cena: HTMLInputElement): boolean{
