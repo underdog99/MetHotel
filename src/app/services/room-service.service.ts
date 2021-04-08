@@ -31,4 +31,5 @@ export class RoomServiceService {
   public getRoom(): Observable<Sobe>{
     return this.currRoom;
   }
+
 }

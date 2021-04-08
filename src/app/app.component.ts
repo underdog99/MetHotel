@@ -54,4 +54,5 @@ export class AppComponent {
     let id = this.sobeNiz.findIndex(i => i.naziv === soba.naziv);
     this.sobeNiz[id].naziv = "Azurirano";
   }
+
 }
