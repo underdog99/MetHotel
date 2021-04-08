@@ -41,4 +41,23 @@
 (sobaUpdate)="updateSobu($event)"
 [soba]="s">
 </app-sobe>
+<hr>
+<h2>
+    OnInit i OnDestroy
+</h2>
+<button (click)="toggle()">
+Toggle
+</button>
+<app-on-init *ngIf="flag">
+</app-on-init>
+<hr>
+<h2>
+    OnChanges
+</h2>
+<div>
+    <input type="text" #namefld value="{{name}}" (keyup)="setValues(namefld, commentfld)">
+    <input type="text" #commentfld value="{{comment}}" (keyup)="setValues(commentfld, commentfld)">
+</div>
+<app-on-changes [name]="name" [comment]="comment">
+</app-on-changes>
 

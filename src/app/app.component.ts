@@ -9,8 +9,12 @@ import { Sobe } from './sobe/sobe.model';
 })
 export class AppComponent {
   sobeNiz: Sobe[];
+  flag: boolean;
+  name: string;
+  comment: string;
 
   constructor(private _roomService: RoomServiceService){
+    this.flag = true;
     this.sobeNiz = [
       new Sobe(
         'Soba 1',
@@ -38,6 +42,11 @@ export class AppComponent {
     this._roomService.getRoom().subscribe();
   }
 
+  ngOninit(){
+    this.name = "Pera Peric";
+    this.comment = "Ovo je prvi komentar";
+  }
+
   addSobu(naziv: HTMLInputElement, tip: HTMLInputElement, sprat: HTMLInputElement, opis: HTMLInputElement, cena: HTMLInputElement): boolean{
     console.log("Dodaj sobu: ", naziv.value);
     this.sobeNiz.push(new Sobe(naziv.value, tip.value, sprat.valueAsNumber, opis.value, cena.valueAsNumber));
@@ -53,6 +62,15 @@ export class AppComponent {
   public updateSobu(soba: Sobe){
     let id = this.sobeNiz.findIndex(i => i.naziv === soba.naziv);
     this.sobeNiz[id].naziv = "Azurirano";
+  }
+
+  toggle(): void{
+    this.flag = !this.flag;
+  }
+
+  setValues(namefld, commentfld): void{
+    this.name = namefld.value;
+    this.comment = commentfld.value;
   }
 
 }

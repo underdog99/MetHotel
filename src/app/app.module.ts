@@ -8,13 +8,15 @@ import { SobeComponent } from './sobe/sobe.component';
 import { PretragaPipe } from './pipe/pretraga.pipe';
 import { RoomServiceService } from './services/room-service.service';
 import { SingleRoomComponent } from './components/single-room/single-room.component';
+import { OnInitComponent } from './lifecycleComponents/on-init/on-init.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SobeComponent,
     PretragaPipe,
-    SingleRoomComponent
+    SingleRoomComponent,
+    OnInitComponent
   ],
   imports: [
     BrowserModule,
